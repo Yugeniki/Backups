@@ -1,0 +1,65 @@
+global !p
+def math():
+    return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+
+def comment(): 
+    return vim.eval('vimtex#syntax#in_comment()') == '1'
+
+def env(name):
+    [x,y] = vim.eval("vimtex#env#is_inside('" + name + "')") 
+    return x != '0' and x != '0'
+
+endglobal
+
+context "math()" 
+snippet "vc" "vector" riA
+\vec{$1}$0
+endsnippet
+
+context "math()" 
+snippet "([a-zA-Z])vec" "vec" riA
+\vec{`!p snip.rv=match.group(1)`}
+endsnippet
+
+context "math()" 
+snippet inv "inverse" iA
+^{-1}
+endsnippet
+
+snippet id "identity" w
+\\mqty(\\dmat[0]{1$1})$0
+endsnippet
+
+snippet seq "sequence" w
+${1:n} \\mapsto ${2:a_n} $0
+endsnippet
+
+context "math()"
+snippet ee "epsilon" iA
+\epsilon 
+endsnippet
+
+context "math()"
+snippet pp "powerset" iA
+\mathcal{P}
+endsnippet
+
+context "math()" 
+snippet >_ "succeq" iA
+\succeq
+endsnippet
+
+context "math()" 
+snippet _> "succeq" iA
+\succeq
+endsnippet
+
+context "math()" 
+snippet <_ "preceq" iA
+\preceq
+endsnippet
+
+context "math()" 
+snippet _< "preceq" iA
+\preceq
+endsnippet

@@ -1,0 +1,50 @@
+call plug#begin('~/.vim/plugged')
+
+"Fugitive Vim Github Wrapper
+Plug 'tpope/vim-fugitive'
+
+"vim latex
+Plug 'lervag/vimtex'
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
+ "vim snippets 
+Plug 'sirver/ultisnips'
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "Hubbard"] 
+Plug 'KeitaNakamura/tex-conceal.vim'
+ setlocal spell
+ set spelllang=en_us
+ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+Plug 'vifm/vifm.vim'
+let g:vifm_replace_netrw = 1
+
+Plug '907th/vim-auto-save'
+
+Plug 'vim-airline/vim-airline'
+ let g:airline_powerline_fonts = 1
+
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='base16_nord'
+"Plug 'arcticicestudio/nord-vim'
+
+Plug 'dylanaraps/wal.vim'  
+Plug 'ap/vim-css-color'
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+"Plug 'valloric/youcompleteme'
+"Plug 'ervandew/supertab'
+" make YCM compatible with UltiSnips (using supertab)
+"let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+"let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+"let g:SuperTabDefaultCompletionType = '<C-n>'
+"let g:SuperTabCrMapping  = 0
+
+call plug#end()
+
